@@ -8,9 +8,9 @@ import org.springframework.data.repository.query.Param;
 public interface IDireccion extends JpaRepository<Direccion, Long> {
     Direccion findBycodigo_Postal(String codigo_Postal);
 
-    @Query("SELECT d FROM Direccion d WHERE d.codigo_Postal = ?1")
+    @Query("SELECT d FROM direccion d WHERE d.codigo_Postal = ?1")
     Direccion obtenerDireccionPorCodigopostal(String codigo_Postal);
 
-    @Query("SELECT d FROM Direccion d WHERE d.codigo_Postal = :codigo_Postal")
+    @Query("SELECT d FROM direccion d WHERE d.codigo_Postal = :codigo_Postal")
     Direccion obtenerEscuelaPorParam(@Param("codigo_Postal") String codigo_Postal);
 }
